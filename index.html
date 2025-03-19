@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise</title>
+        <!-- Gogle Material Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+
+<!-- Tailwind Custom Animation -->
+<!-- Custom CSS for Animation -->
+<style>
+    @keyframes fadeInLetter {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+  </style>
+      
+</head>
+<body class="bg-gray-100">
+   <!-- Hero Section -->
+
+   <div id="loadingScreen" class="fixed inset-0 flex items-center bg-black justify-center  z-50">
+    <div class="text-center">
+        <img src="img/logo.jpeg" alt="Loading" class="w-24 h-24 rounded-full animate-pulse mx-auto">
+        <div class="mt-4">
+            <div class="w-10 h-10 border-4 border-white-300 border-t-gray-600 rounded-full animate-spin mx-auto"></div>
+        </div>
+    </div>
+</div>
+<!-- JavaScript for Letter-by-Letter Animation -->
+    
+    <!-- Navbar -->
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2 bg-black text-white px-4 py-2 rounded-full shadow-lg">
+                <img src="img/logo.jpeg" alt="Perfume Logo" class="w-20 h-20 rounded-full">
+                <span class="text-lg font-bold"> Paradise</span>
+            </div>
+            
+            <button class="md:hidden text-2xl" id="menu-toggle">&#9776;</button>
+            <ul class="hidden md:flex space-x-6 text-lg" id="nav-links">
+                <li><a href="index.html" class="hover:text-gray-400">Home </a></li>
+                <div class="relative group">
+                    <li class="flex items-center space-x-1 cursor-pointer hover:text-gray-400">
+                        <a href="women.html">Women</a>
+                        <span class="transition-transform transform group-hover:rotate-180">▼</span>
+                    </li>
+                    <ul class="absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Best Sellers</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Western Inspired</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Arabian Inspired</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Original Fragrances</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Oudness</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Sale</li>
+                    </ul>
+                </div>
+                
+                <div class="relative group">
+                    <li class="flex items-center space-x-1 cursor-pointer hover:text-gray-400">
+                        <a href="men.html">Men</a>
+                        <span class="transition-transform transform group-hover:rotate-180">▼</span>
+                    </li>
+                    <ul class="absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Best Sellers</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Western Inspired</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Arabian Inspired</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Original Fragrances</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Oudness</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Sale</li>
+                    </ul>
+                </div>
+                                
+                <li><a href="brand.html" class="hover:text-gray-400">Brand</a></li>
+                <li><a href="category.html" class="hover:text-gray-400">Category</a></li>
+            </ul>
+        </div>
+        <ul class="hidden flex flex-col space-y-2  bg-black p-4 md:hidden" id="mobile-menu">
+            <li><a href="#" class="hover:text-gray-400">Home </a></li><div class="relative group">
+                <li class="flex items-center space-x-1 cursor-pointer hover:text-gray-400">
+                    <a href="women.html">Women</a>
+                    <span class="transition-transform transform group-hover:rotate-180">▼</span>
+                </li>
+                <ul class="absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Best Sellers</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Western Inspired</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Arabian Inspired</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Original Fragrances</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Oudness</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Sale</li>
+                </ul>
+            </div>
+            
+            <div class="relative group">
+                <li class="flex items-center space-x-1 cursor-pointer hover:text-gray-400">
+                    <a href="men.html">Men</a>
+                    <span class="transition-transform transform group-hover:rotate-180">▼</span>
+                </li>
+                <ul class="absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Best Sellers</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Western Inspired</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Arabian Inspired</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Original Fragrances</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Oudness</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 hover:text-black font-medium cursor-pointer">Sale</li>
+                </ul>
+            </div>
+            
+                <li><a href="brand.html" class="hover:text-gray-400">Brand</a></li>
+                <li><a href="category.html" class="hover:text-gray-400">Category</a></li>
+        </ul>
+    </nav>
+
+        <!-- Slider Container -->
+        <div class="relative w-full overflow-hidden">
+            <div class="flex transition-transform duration-700 ease-in-out" id="slider">
+                <!-- Slide 1 -->
+                <div class="min-w-full relative">
+                    <img src="img/slide2.jpg" class="w-full h-[500px] object-cover" alt="Perfume 1">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
+                        <h2 class="text-4xl font-bold">NEW ARRIVALS</h2>
+                        <p class="text-lg mt-2">Discover our latest luxury perfumes!</p>
+                        <button class="mt-4 bg-black text-white px-4 py-2 rounded">SHOP NOW!</button>
+                    </div>
+                </div>
+        
+                <!-- Slide 2 -->
+                <div class="min-w-full relative">
+                    <img src="img/slide.jpg" class="w-full h-[500px] object-cover" alt="Perfume 2">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
+                        <h2 class="text-4xl font-bold">EXCLUSIVE SCENTS</h2>
+                        <p class="text-lg mt-2">A perfect fragrance for every moment.</p>
+                        <button class="mt-4 bg-black text-white px-4 py-2 rounded">SHOP NOW!</button>
+                    </div>
+                </div>
+        
+                <!-- Slide 3 -->
+                <div class="min-w-full relative">
+                    <img src="img/pexels-didsss-1190829.jpg" class="w-full h-[500px] object-cover" alt="Perfume 3">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-8">
+                        <h2 class="text-4xl font-bold">ELEGANCE IN A BOTTLE</h2>
+                        <p class="text-lg mt-2">Unleash your inner charm with our collection.</p>
+                        <button class="mt-4 bg-black text-white px-4 py-2 rounded">SHOP NOW!</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Navigation Buttons -->
+            <button onclick="prevSlide()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full">‹</button>
+            <button onclick="nextSlide()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full">›</button>
+        </div>
+        
+           
+    <!-- Offers Section -->
+    <section class="flex flex-wrap justify-center gap-6 p-6">
+        <div class="bg-white p-6 text-center shadow-lg rounded-lg">
+            <h2 class="text-2xl font-bold">50% <span class="text-pink-500">TODAY’S SALE</span></h2>
+            <img src="img/sales.jpg" alt="Sale Perfume" class="w-48 h-48 object-cover mx-auto">
+            <button class="mt-4 bg-black text-white px-4 py-2 rounded">SHOP NOW!</button>
+        </div>
+    
+        <div class="bg-white p-6 text-center shadow-lg rounded-lg">
+            <h2 class="text-2xl font-bold">GIFT <span class="text-pink-500">SETS</span></h2>
+            <img src="img/gift.jpg" alt="Gift Sets" class="w-48 h-48 object-cover mx-auto">
+            <button class="mt-4 bg-black text-white px-4 py-2 rounded">SHOP NOW!</button>
+        </div>
+    
+        <div class="bg-white p-6 text-center shadow-lg rounded-lg">
+            <h2 class="text-2xl font-bold">FREE <span class="text-pink-500">SHIPPING</span></h2>
+            <img src="img/ship.jpg" alt="Free Shipping" class="w-48 h-48 object-cover mx-auto">
+            <button class="mt-4 bg-black text-white px-4 py-2 rounded">SHOP NOW!</button>
+        </div>
+    </section>
+    <section class="p-6">
+        <!-- Featured Perfumes -->
+        <h2 class="text-3xl font-bold text-center mb-6">🌟 Best Sellers</h2>
+        <div class="flex overflow-x-scroll space-x-6 scrollbar-hide">
+            <!-- Product Card -->
+            <div class="w-64 bg-white shadow-lg rounded-lg p-4">
+                <div class="bg-gray-200 animate-pulse w-full h-40 rounded-lg"></div> <!-- Loading Effect -->
+                <h3 class="text-lg font-semibold mt-4 bg-gray-200 w-3/4 h-6 animate-pulse"></h3> 
+                <p class="text-gray-500 mt-2 bg-gray-200 w-1/2 h-4 animate-pulse"></p>
+                <button class="mt-4 bg-black text-white px-4 py-2 rounded w-full">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="p-6 bg-gray-100">
+        <!-- Customer Reviews -->
+        <h2 class="text-3xl font-bold text-center mb-6">💬 What Our Customers Say</h2>
+        <div class="relative w-full max-w-lg mx-auto overflow-hidden">
+            <div class="flex transition-transform duration-700 ease-in-out" id="reviewSlider">
+                <!-- Review 1 -->
+                <div class="w-full p-6 bg-white rounded-lg shadow-lg text-center">
+                    <p class="text-lg italic">"Absolutely love this scent! Long-lasting and elegant."</p>
+                    <h3 class="font-semibold mt-2">- Sarai Mukutuku</h3>
+                </div>
+                <!-- Review 2 -->
+                <div class="w-full p-6 bg-white rounded-lg shadow-lg text-center">
+                    <p class="text-lg italic">"Perfect for special occasions. I get compliments all the time!"</p>
+                    <h3 class="font-semibold mt-2">- Mark Tene.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="p-6 text-center">
+        <!-- Subscribe & Discount -->
+        <h2 class="text-3xl font-bold">📩 Get 10% OFF!</h2>
+        <p class="text-gray-500">Subscribe to get exclusive discounts and updates.</p>
+        <input type="email" placeholder="Enter your email" class="border p-2 rounded-lg mt-3">
+        <button class="bg-black text-white px-4 py-2 rounded mt-3">Subscribe</button>
+    </section>
+    
+    <footer class="bg-black text-white text-center p-6 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
+            <!-- About Us Section -->
+            <div>
+                <h3 class="text-xl font-semibold">About Us</h3>
+                <p class="text-gray-400 mt-2">Luxury perfumes at the best prices. Discover our exclusive collections.</p>
+            </div>
+    
+            <!-- Quick Links Section -->
+            <div>
+                <h3 class="text-xl font-semibold">Quick Links</h3>
+                <ul class="text-gray-400 mt-2 space-y-2">
+                    <li><a href="#" class="hover:text-white flex items-center"><span class="material-icons text-sm mr-2">chevron_right</span>Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white flex items-center"><span class="material-icons text-sm mr-2">chevron_right</span>FAQ</a></li>
+                    <li><a href="#" class="hover:text-white flex items-center"><span class="material-icons text-sm mr-2">chevron_right</span>Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white flex items-center"><span class="material-icons text-sm mr-2">chevron_right</span>Terms & Conditions</a></li>
+                </ul>
+            </div>
+    
+            <!-- Newsletter Subscription -->
+            <div>
+                <h3 class="text-xl font-semibold">Newsletter</h3>
+                <p class="text-gray-400 mt-2">Subscribe to get updates on our latest offers.</p>
+                <form class="mt-3">
+                    <div class="flex">
+                        <input type="email" placeholder="Enter your email" class="p-2 w-full text-black rounded-l">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-r flex items-center">
+                            <span class="material-icons">send</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Social Media Section -->
+            <div>
+                <h3 class="text-xl font-semibold">Follow Us</h3>
+                <div class="flex space-x-4 text-gray-400 mt-2">
+                    <a href="#" class="hover:text-white text-2xl"><span class="material-icons">facebook</span></a>
+                    <a href="#" class="hover:text-white text-2xl"><span class="material-icons">camera_alt</span></a>
+                    <a href="#" class="hover:text-white text-2xl"><span class="material-icons">chat</span></a>
+                    <a href="#" class="hover:text-white text-2xl"><span class="material-icons">play_circle</span></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-700 mt-6 pt-4 text-gray-500 text-sm">
+            <p>&copy; 2025 Perfume Luxe. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+        
+</body>
+</html>
